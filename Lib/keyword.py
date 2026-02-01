@@ -18,6 +18,8 @@ __all__ = ["iskeyword", "issoftkeyword", "kwlist", "softkwlist"]
 kwlist = [
     'False',
     'islev',
+    'icinde',
+    'ozyinele',
     'ise',
     'None',
     'True',

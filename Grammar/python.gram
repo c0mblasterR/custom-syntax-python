@@ -139,7 +139,7 @@ compound_stmt[stmt_ty]:
     | &('if' | 'eger') if_stmt
     | &('class' | '@') class_def
     | &('with' | 'async') with_stmt
-    | &('for' | 'async') for_stmt
+    | &('for' | 'async' | 'ozyinele') for_stmt
     | &'try' try_stmt
     | &'while' while_stmt
     | match_stmt
@@ -401,9 +401,9 @@ while_stmt[stmt_ty]:
 
 for_stmt[stmt_ty]:
     | invalid_for_stmt
-    | 'for' t=star_targets 'in' ~ ex=star_expressions ':' tc=[TYPE_COMMENT] b=block el=[else_block] {
+    | ('for'|'ozyinele') t=star_targets ('in'|'icinde') ~ ex=star_expressions (':'|'ise') tc=[TYPE_COMMENT] b=block el=[else_block] {
         _PyAST_For(t, ex, b, el, NEW_TYPE_COMMENT(p, tc), EXTRA) }
-    | 'async' 'for' t=star_targets 'in' ~ ex=star_expressions ':' tc=[TYPE_COMMENT] b=block el=[else_block] {
+    | 'async' ('for'|'ozyinele') t=star_targets ('in'|'icinde') ~ ex=star_expressions (':'|'ise') tc=[TYPE_COMMENT] b=block el=[else_block] {
         CHECK_VERSION(stmt_ty, 5, "Async for loops are", _PyAST_AsyncFor(t, ex, b, el, NEW_TYPE_COMMENT(p, tc), EXTRA)) }
     | invalid_for_target
 
