@@ -99,5 +99,8 @@ make -j$(nproc)
 
 ## 📜 License
 
+
+AGPLv3 -> LICENSE-AGPLV3.md
+PSF license -> LICENSE-PSFL.md
 This project is licensed under **AGPLv3**. (Note: Original CPython source files maintain their respective PSF license history where applicable.)
 ---
